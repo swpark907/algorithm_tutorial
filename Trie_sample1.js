@@ -19,9 +19,9 @@ function makeTrie(words) {
   const root = {}; // 먼저 루트 노드를 설정할 변수를 만든다.
   for (const word of words) {
     // Trie를 구성하기 위한 루프를 돌린다.
-    let current = root; // 루프부터 시작
+    let current = root; // 루트부터 시작
     for (const letter of word) {
-      // 단어의 글자를 하나씩 춫출한 후
+      // 단어의 글자를 하나씩 추출한 후
       if (!current[letter]) current[letter] = [0, {}]; // 값을 넣는다. 리스트의 첫 번째 값은 학습된 단어가 몇 개인지를 카운팅하고 두 번째 값은 트리 구조로 이용할 노드 값으로 사용한다.
       current[letter][0] = 1 + (current[letter][0] || 0); // 카운팅을 위해 1 더해준다.
       current = current[letter][1]; // current는 letter에 해당되는 노드로 이동한다.
